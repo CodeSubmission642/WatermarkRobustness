@@ -1,10 +1,11 @@
-## Adversarial Watermark Embedding and Attacks on Them
-
-### All the code is placed in **src/adversarial_main.py**
+This reposity contains supplementary source code for the paper "On the Robustness of the Backdoor-based Watermarking in Deep Neural Networks". 
+We distribute our code-base to replicate the black-box and white-box watermark removal attacks presented in the paper. 
 
 ### 1. Frontier Stitching Zerobit (https://arxiv.org/pdf/1711.01894.pdf)
 
-#### Embeding
+Code location: 'src/adversarial_main.py'
+
+#### Embedding
 
 The watermark embedding is implemented by the function **zerobit_embed**. It takes in a model, training data, test data and also a tf.session. The outputs are the embedded model, history lists for visualization purpose and a trigger set as the key of the watermark embedding.
 
