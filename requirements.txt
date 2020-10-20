@@ -1,0 +1,12 @@
+cleverhans
+emnist==0.0
+jupyter==1.0.0
+Keras==2.3.0
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.2
+matplotlib==3.3.2
+numpy==1.16.6
+tensorboard==1.15.0
+tensorflow==1.15.3
+tensorflow-probability==0.8.0rc0
+tqdm==4.50.2
