@@ -9,7 +9,7 @@ from src.preprocess_data import transform_to_one_hot, normalize_0_1
 
 """ Constants for the model and the trigger set path 
 """
-BASE_PATH = os.getcwd()[0:os.getcwd().rfind('Watermark')] + "Watermark/"
+BASE_PATH = os.getcwd()[0:os.getcwd().rfind('WatermarkRobustness')] + "WatermarkRobustness/"
 TRIGGER_SET_PATH = BASE_PATH + 'data/usenix_abstract_images/'  # Path to the trigger set relative to this file
 
 

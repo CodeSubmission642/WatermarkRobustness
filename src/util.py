@@ -85,7 +85,7 @@ def save_2d_numpy_array_if_exists(n_samples, x, y):
     filepath = TRAINING_DATA_SUFFIX + n_samples
     if filepath is not None:
         filepath = os.getcwd()[:os.getcwd(
-        ).rfind('Watermark')] + "Watermark/tmp/" + filepath
+        ).rfind('WatermarkRobustness')] + "WatermarkRobustness/tmp/" + filepath
         np.savez(filepath, x=x, y=y)
 
 
@@ -95,7 +95,7 @@ def load_2d_numpy_array_if_exists(n_samples):
     TRAINING_DATA_SUFFIX = "TRAINING_DATA"
     filepath = TRAINING_DATA_SUFFIX + n_samples
     filepath = os.getcwd()[:os.getcwd(
-    ).rfind('Watermark')] + "Watermark/tmp/" + filepath + ".npz"
+    ).rfind('WatermarkRobustness')] + "WatermarkRobustness/tmp/" + filepath + ".npz"
     if os.path.isfile(filepath):
         with np.load(filepath) as data:
             x, y = data["x"], data["y"]
@@ -120,7 +120,7 @@ def save_blackbox_model_to_file(filepath, model, history, prefix=""):
 
     if filepath is not None:
         filepath = os.getcwd()[0:os.getcwd(
-        ).rfind('Watermark')] + "Watermark/tmp/" + filepath
+        ).rfind('WatermarkRobustness')] + "WatermarkRobustness/tmp/" + filepath
         model.save_weights(filepath + MODEL_SUFFIX)
         with open(filepath + HISTORY_SUFFIX, 'wb') as pickle_file:
             pickle.dump(history, pickle_file)
@@ -133,7 +133,7 @@ def load_blackbox_model_from_file(model, filepath, prefix=""):
 
     if filepath is not None:
         filepath = os.getcwd()[0:os.getcwd(
-        ).rfind('Watermark')] + "Watermark/tmp/" + filepath
+        ).rfind('WatermarkRobustness')] + "WatermarkRobustness/tmp/" + filepath
         if os.path.isfile(filepath +
                           MODEL_SUFFIX) and os.path.isfile(filepath +
                                                            HISTORY_SUFFIX):
@@ -151,7 +151,7 @@ def save_wm_model_to_file(filepath, model, history, trigger):
 
     if filepath is not None:
         filepath = os.getcwd()[0:os.getcwd(
-        ).rfind('Watermark')] + "Watermark/tmp/" + filepath
+        ).rfind('WatermarkRobustness')] + "WatermarkRobustness/tmp/" + filepath
         model.save_weights(filepath + MODEL_SUFFIX)
         with open(filepath + HISTORY_SUFFIX, 'wb') as pickle_file:
             pickle.dump(history, pickle_file)
@@ -166,7 +166,7 @@ def load_wm_model_from_file(model, filepath):
 
     if filepath is not None:
         filepath = os.getcwd()[0:os.getcwd(
-        ).rfind('Watermark')] + "Watermark/tmp/" + filepath
+        ).rfind('WatermarkRobustness')] + "WatermarkRobustness/tmp/" + filepath
         if os.path.isfile(filepath + MODEL_SUFFIX) and os.path.isfile(filepath + HISTORY_SUFFIX) \
                 and os.path.isfile(filepath + TRIGGER_SUFFIX):
             model.load_weights(filepath + MODEL_SUFFIX)
